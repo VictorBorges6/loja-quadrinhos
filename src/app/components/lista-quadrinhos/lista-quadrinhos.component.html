@@ -1,0 +1,30 @@
+<div class="row mx-1" style="margin-top: 1vh;">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Pesquisar por título" [(ngModel)]="inputPesquisa">
+        <div class="input-group-append">
+            <button class="btn btn-outline-danger" type="button" id="button-addon2"  (click)="pesquisarQuadrinhos()">
+                <span class="fas fa-search" *ngIf="!carregando"></span>
+                <span class="fas fa-spinner fa-pulse" *ngIf="carregando"></span>
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="!mostraErro && listaComics.length > 0">
+        <ul class="row ul-class listaComics justify-content-between">
+            <a *ngFor="let comic of listaComics" (click)="selecionarComic(comic)">
+                <li class="col itemLista">
+                    <div class="comicThumbArea">
+                        <img class="comicThumb" [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension" />
+                    </div>
+                    <div class="personanegemNameArea">
+                        {{comic.title}}
+                    </div>
+                </li>
+            </a>
+        </ul>
+    </div>
+
+    <p *ngIf="mostraErro" class="erroBusca">
+        Desculpe, não foi encontrado nenhum HQ com este título.
+    </p>
+</div>
