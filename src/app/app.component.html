@@ -1,0 +1,25 @@
+<div class="bg">
+  <div class="transbox container-fluid">
+
+    <h1 class="title">
+      {{title}}
+    </h1>
+
+    <div class="carrinho btn" (click)="changeIsFinalizacao()">
+      <span class="fas fa-shopping-cart" style="text-align: center;"></span>
+    </div>
+
+    <div class="content-box container-fluid" [hidden]="abaService.getAba() != 'lista'">
+      <app-lista-quadrinhos></app-lista-quadrinhos>
+    </div>
+
+    <div class="content-box container-fluid" [hidden]="abaService.getAba() != 'detalhes'">
+      <app-detalhes-quadrinhos></app-detalhes-quadrinhos>
+    </div>
+
+    <div class="content-box container-fluid" [hidden]="abaService.getAba() != 'finalizacao'">
+      <app-finalizacao-compra></app-finalizacao-compra>
+    </div>
+  </div>
+</div>
+  

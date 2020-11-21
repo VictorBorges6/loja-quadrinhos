@@ -1,0 +1,41 @@
+.listaComics {
+    overflow-y: scroll;
+    max-height: 75vh;
+}
+
+.itemLista {
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 5px;
+    width: 17vw;
+}
+
+.itemLista:hover {
+    background-color: #ED1D24;
+    color: white;
+    cursor: pointer;
+}
+
+.comicThumb {
+    width: 10vw;
+    object-fit: cover;
+}
+
+.comicThumbArea {
+    justify-content: center;
+}
+
+.comicNameArea {
+    margin-top: .5em;
+}
+
+.erroBusca {
+    margin: 1em;
+    color: red;
+    font-weight: 'bold';
+    min-width: 100%;
+}
+
+.ul-class {
+    list-style: none;
+}
