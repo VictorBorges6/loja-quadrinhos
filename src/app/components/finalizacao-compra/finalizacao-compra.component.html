@@ -1,0 +1,42 @@
+<div class="row texto justify-content-center"><strong>Carrinho de compras</strong></div>
+
+<div class="row" *ngIf="!!finalizacaoService.getListaItens()">
+    <ul class="col-12 ul-class listaComics">
+        <a *ngFor="let comic of finalizacaoService.getListaItens()">
+            <li class="row itemLista justify-content-between">
+                <div class="personanegemNameArea">
+                    {{comic.title}}
+                </div>
+                <span class="fas fa-trash" (click)="removeItem(comic)" title="Remover item"></span>
+            </li>
+        </a>
+    </ul>
+</div>
+
+<div class="row texto justify-content-center"  [hidden]="finalizacaoService.getQuantidadeItens() != 0">
+    Seu carrinho de compras está vazio.
+</div>
+
+<div class="row texto justify-content-center" [innerHTML]="getTextQuantidadeItens()" [hidden]="finalizacaoService.getQuantidadeItens() == 0"></div>
+<div class="row texto justify-content-center" [innerHTML]="getTextTotal()" [hidden]="finalizacaoService.getQuantidadeItens() == 0"></div>
+
+<div class="row justify-content-center texto" *ngIf="finalizacaoService.getQuantidadeItens() > 0">
+    <div class="input-group justify-content-center">
+        <input type="text" class="input-cupom" placeholder="Insira seu cupom de desconto" [(ngModel)]="codigoCupom">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button" title="Aplicar desconto" (click)="aplicaDesconto()"> Aplicar desconto </button>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center" *ngIf="finalizacaoService.getQuantidadeItens() > 0">
+    <button type="button" class="btn btn-success" (click)="finalizaCompra()">
+        Finalizar compra
+    </button>
+</div>
+
+<ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''" class="alerta">{{successMessage}}
+</ngb-alert>
+
+<ngb-alert #selfClosingAlert *ngIf="dangerMessage" type="danger" (closed)="dangerMessage = ''" class="alerta">{{dangerMessage}}
+</ngb-alert>

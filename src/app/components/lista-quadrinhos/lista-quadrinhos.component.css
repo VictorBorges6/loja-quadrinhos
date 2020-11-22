@@ -1,0 +1,54 @@
+.listaComics {
+    overflow-y: scroll;
+    max-height: 75vh;
+}
+
+.itemLista {
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 5px;
+    width: 17vw;
+}
+
+.itemLista:hover {
+    background-color: #ED1D24;
+    color: white;
+    cursor: pointer;
+}
+
+.comicThumb {
+    width: 10vw;
+    object-fit: cover;
+}
+
+.comicThumbArea {
+    justify-content: center;
+    position: relative;
+}
+
+.comicNameArea {
+    margin-top: .5em;
+}
+
+.erroBusca {
+    margin: 1em;
+    color: #ED1D24;
+    font-weight: 'bold';
+    min-width: 100%;
+}
+
+.ul-class {
+    list-style: none;
+}
+
+.seloRaro {
+    position: absolute;
+    margin-left: -10%;
+    font-size: 1.5em;
+    color: #ED1D24;
+    border-color: black;
+}
+
+.itemLista:hover .seloRaro {
+    color: white;
+}
