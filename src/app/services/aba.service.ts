@@ -13,7 +13,7 @@ export const ABA_FINALIZACAO = 'finalizacao';
  */
 export class AbaService {
 
-  private aba: string = ABA_LISTA;
+  private aba: string = '';
   constructor() { }
 
   setAba(_aba: string): void {

@@ -3,6 +3,7 @@
  */
 export interface Comic {
     id: number;
+    raro: boolean;
     title: string;
     issueNumber: number;
     variantDescription : string;
@@ -21,6 +22,12 @@ export interface Comic {
         {
             type: string;
             url: string; 
+        }
+    ],
+    prices: [
+        {
+            type: string;
+            price: number; 
         }
     ],
     urls: [

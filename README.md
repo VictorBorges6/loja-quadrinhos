@@ -1,27 +1,40 @@
 # LojaQuadrinhos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+Projeto desenvolvido com Angular CLI 10.0.1.
 
-## Development server
+O projeto tem por objetivo criar uma loja virtual de venda de quadrinhos da MARVEL
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Todo o conteúdo visual aqui apresentado é de propriedade da MARVEL.
 
-## Code scaffolding
+## Configuração
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para configurar este projeto, utilize o comando `npm install`.
 
-## Build
+Para rodar um servidor de desenvolvimento, utilize o comando `ng serve`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para compilar o projeto, utilize o comando `ng build`. 
 
-## Running unit tests
+## Sobre
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O projeto foi desenvolvido utilizando o Angular 10, sendo escrito em sua maioria em Typescript.
 
-## Running end-to-end tests
+Foi utilizado a API da MARVEL(`https://gateway.marvel.com:443/v1/public/`) para obtenção dos quadrinhos para a loja.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Solução adotada
 
-## Further help
+O projeto é constituído em sua estrutura por 4 componentes:
+    - AppComponent: componente principal;
+    - ListaQuadrinhosComponent: responsável pela pesquisa e listagem dos quadrinhos vindos da API;
+    - DetalhesQuadrinhosComponent: responsável por mostrar os detalhes do quadrinho selecionado no componente anterior e adicioná-lo ao carrinho de compras;
+    - FinalizacaoCompraComponent: responsável pela lista dos quadrinhos adicionados, com somatório, adição de cupons de desconto e finalização da compra.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Possui também 3 serviços:
+    - AbaService: responsável por controlar qual aba o usuário está;
+    - ComicService: responsável por controlar as informações dos quadrinhos;
+    - FinalizacaoCompraService: responsável pelos métodos de finalização da compra.
+
+Os cupons de desconto disponíveis para teste estão localizados em loja-quadrinhos\src\app\assets\cupons.json.
+
+Os quadrinhos raros são aleatorizados a partir do último dígito do seu id. Ao carregar a aplicação, é randomizado um número entre 0 e 9 e os quadrinhos que
+tiverem seus ids terminando neste número, é classificado como raro. Optei com selecionar os raros ao carregar a aplicação para evitar que a cada pesquisa os
+quadrinhos sejam aleatorizados novamente, fazendo com que um quadrinho que não era raro ficasse raro e vice-versa.

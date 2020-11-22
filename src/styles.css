@@ -9,3 +9,8 @@
 div {
     display: flex;
 }
+
+.texto {
+    margin: 2vh;
+    text-align: justify;
+}

@@ -23,6 +23,7 @@
 
 .comicThumbArea {
     justify-content: center;
+    position: relative;
 }
 
 .comicNameArea {
@@ -31,11 +32,23 @@
 
 .erroBusca {
     margin: 1em;
-    color: red;
+    color: #ED1D24;
     font-weight: 'bold';
     min-width: 100%;
 }
 
 .ul-class {
     list-style: none;
+}
+
+.seloRaro {
+    position: absolute;
+    margin-left: -10%;
+    font-size: 1.5em;
+    color: #ED1D24;
+    border-color: black;
+}
+
+.itemLista:hover .seloRaro {
+    color: white;
 }

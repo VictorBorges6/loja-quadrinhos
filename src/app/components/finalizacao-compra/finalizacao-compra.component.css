@@ -1,0 +1,43 @@
+.listaComics {
+    overflow-y: scroll;
+    max-height: 25vh;
+    background-color: rgb(241, 241, 241);
+}
+.itemLista {
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 5px;
+}
+
+.itemLista:hover {
+    background-color: #ED1D24;
+    color: white;
+    cursor: pointer;
+}
+
+.comicNameArea {
+    margin-top: .5em;
+}
+
+.erroBusca {
+    margin: 1em;
+    color: #ED1D24;
+    font-weight: 'bold';
+    min-width: 100%;
+}
+
+.ul-class {
+    list-style: none;
+}
+
+.alerta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.input-cupom {
+    width: 20%;
+}

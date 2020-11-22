@@ -1,0 +1,42 @@
+.btn-voltar {
+    color: #ED1D24;
+    font-size: 2em;
+    float: right;
+}
+
+.btn-voltar:hover {
+    color: #991317;
+}
+
+.comicThumbArea {
+    margin-top: 2vh;
+}
+
+.comicThumb {
+    object-fit: contain;
+    max-width: 20vw;
+}
+
+.seloRaro {
+    margin-left: 7vw;
+    margin-right: 0.7em;
+    font-size: 1.5em;
+    color: #ED1D24;
+    border-color: black;
+}
+
+.div-adicionar-carrinho {
+    float: right;
+}
+
+.preco {
+margin-bottom: 1vh;
+}
+
+.alerta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}

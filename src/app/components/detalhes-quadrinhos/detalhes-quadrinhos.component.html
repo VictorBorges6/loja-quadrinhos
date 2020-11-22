@@ -1,1 +1,36 @@
-<p>detalhes-quadrinhos works!</p>
+<div class="btn-voltar btn">
+    <span class="fas fa-times-circle" (click)="voltaTelaLista()"></span>
+</div>
+
+<div class="row" *ngIf="!!comicService.getComic()">
+    <div class="comicThumbArea col-sm-3">
+        <img class="comicThumb" [src]="comicService.getComic().thumbnail.path+'.'+comicService.getComic().thumbnail.extension" />
+    </div>
+
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="texto col-sm-12"  [innerHTML]="getTitulo()"> </div>
+            <div class="texto col-sm-12"  [innerHTML]="getPersonagens()"> </div>
+            <div class="texto col-sm-12"  [innerHTML]="getCriadores()"> </div>
+            <div class="texto col-sm-12"  [innerHTML]="getResumo()"> </div>
+        </div>
+    </div>
+</div>
+
+<div class="row texto" *ngIf="!!comicService.getComic()">
+    <div class="item-raro" *ngIf="comicService.getComic().raro">
+        <i class="fas fa-exclamation-circle seloRaro"></i>
+        Este item é raro!
+    </div>
+</div>
+
+<div class="div-adicionar-carrinho btn-group-vertical" *ngIf="!!comicService.getComic()">
+    <span class="preco" [innerHTML]="getPreco()"></span>
+    <button type="button" class="btn btn-success" (click)="adicionarCarrinho()">
+        Adicionar ao carrinho
+        <span class="fas fa-shopping-cart"></span>
+    </button>
+</div>
+
+<ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''" class="alerta">{{successMessage}}
+</ngb-alert>

@@ -20,6 +20,8 @@ export class ComicsService {
   private privateKey: string = '67d194c4aae6e9619c93d6146a2fafd211051bea';
 
   private comic = null;
+  private raridade: number = null;
+  private quantidadeItensMostrados: number = 0;
   
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -29,8 +31,9 @@ export class ComicsService {
 
   }
 
-  getListaComics(titulo: string = ''): Observable<{data: {results: Comic[]}}> {
-    let url = this.comicsUrl;
+  getListaComics(titulo: string = ''): Observable<{data: {results: Comic[]}}>
+  {
+    let url = this.comicsUrl + 'offset=' + this.quantidadeItensMostrados + '&';
     if(titulo.length > 0) {
       url += 'titleStartsWith='+encodeURI(titulo)+'&';
     }
@@ -44,7 +47,8 @@ export class ComicsService {
       );
   }
 
-  getParams(): string {
+  getParams(): string
+  {
     let ts = new Date().getTime();
     let hash = Md5.hashStr(ts + this.privateKey + this.publicKey);
     let params = 'ts=' + ts + '&apikey=' + this.publicKey + '&hash=' + hash;
@@ -52,9 +56,9 @@ export class ComicsService {
     return params;
   }
 
-  setComic(comic): void
+  setComic(_comic): void
   {
-    this.comic = comic;
+    this.comic = _comic;
   }
 
   getComic()
@@ -62,4 +66,23 @@ export class ComicsService {
     return this.comic;
   }
 
+  setRaridade(_raridade: number): void
+  {
+    this.raridade = _raridade;
+  }
+
+  getRaridade(): number
+  {
+    return this.raridade;
+  }
+
+  setQuantidadeItensMostrados(_quantidadeItensMostrados: number): void
+  {
+    this.quantidadeItensMostrados = _quantidadeItensMostrados;
+  }
+
+  getQuantidadeItensMostrados(): number
+  {
+    return this.quantidadeItensMostrados;
+  }
 }

@@ -56,3 +56,10 @@
     background-color: rgb(165, 148, 0);
     color: #a01318;
 }
+
+.footer {
+    position: fixed;
+    color: lightgray;
+    bottom: -1em;
+    right: 1em;
+}
