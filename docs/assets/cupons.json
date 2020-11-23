@@ -1,0 +1,17 @@
+[
+    {
+        "cupom_id": 1,
+        "cupom_desconto": 10,
+        "cupom_codigo": "GANHEI10"
+    },
+    {
+        "cupom_id": 2,
+        "cupom_desconto": 20,
+        "cupom_codigo": "NIVER20"
+    },
+    {
+        "cupom_id": 3,
+        "cupom_desconto": 50,
+        "cupom_codigo": "OFF50"
+    }
+]
